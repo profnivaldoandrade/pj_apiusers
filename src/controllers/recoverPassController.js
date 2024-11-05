@@ -19,7 +19,7 @@ class RecoverPassController{
                 let code = authcode.code()
                 SendSms.sendaws(`55${user.values.phone}`,code.toString())
                 let token = jwt.sign({email: user.values.email, authcode: code}, process.env.SECRET, {expiresIn: 900})
-                res.status(200).json({sucess: true, massage: token})
+                res.status(200).json({sucess: true,id:user.values.id, massage: token})
 
             }
 
