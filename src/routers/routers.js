@@ -10,7 +10,7 @@ router.post('/user',UsersController.create)
 router.post('/login', UsersController.login)
 router.post('/recover-password', RecoverPassController.request)
 
-router.get('/users',UsersController.findAll)
+router.get('/users',Auth,UsersController.findAll)
 router.get('/user/:id',Auth,UsersController.findUser)
 
 router.delete('/user/:id', UsersController.remove)
