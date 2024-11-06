@@ -70,7 +70,7 @@ class UsersController{
 
             if (isPassword){
 
-                let token = jwt.sign({email: user.values.email, role: user.values.role},process.env.SECRET,{expiresIn: 600})
+                let token = jwt.sign({email: user.values.email, role: user.values.role},process.env.SECRET,{expiresIn: 60})
                 res.status(200).json({sucess: isPassword, token: token})
 
             }else{
