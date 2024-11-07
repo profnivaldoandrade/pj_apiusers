@@ -16,7 +16,7 @@ class User{
     }
     async findAll(){
         try {
-           let users =  await knex.select(["name","email","phone"]).table('users')
+           let users =  await knex.select(["id","name","email","phone"]).table('users')
             return {status: true, values: users}
         } catch (err) {
             console.log(err)
