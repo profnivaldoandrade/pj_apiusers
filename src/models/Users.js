@@ -25,7 +25,7 @@ class User{
     }
     async findById(id){
         try{
-            let user = await knex.select(["name","email","phone"]).where({id: id}).table('users')
+            let user = await knex.select(["id","name","email","phone"]).where({id: id}).table('users')
             return user.length > 0 ? {status: true, values: user } : {status: undefined, message: 'Usuário Inesistente!'}
         } catch (err) {
             return {status: false, err: err}
