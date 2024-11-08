@@ -29,7 +29,7 @@ class UsersController{
             else if (!user.status)
                 res.status(404).json({sucess: false, message: result.err})
             else
-                res.status(200).json({sucess: true, massage:user.values})
+                res.status(200).json({sucess: true, values: user.values})
         }
     }
 
