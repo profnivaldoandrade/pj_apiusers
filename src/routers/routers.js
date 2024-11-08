@@ -15,7 +15,7 @@ router.get('/user/:id',Auth,UsersController.findUser)
 
 router.delete('/user/:id', UsersController.remove)
 
-router.put('/user/:id', UsersController.editUser)
+router.put('/user/:id',Auth,UsersController.editUser)
 router.put('/user-password/:id',AuthAlterPass,UsersController.editPass)
 
 
