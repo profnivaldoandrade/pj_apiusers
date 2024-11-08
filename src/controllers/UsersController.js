@@ -46,11 +46,11 @@ class UsersController{
     }
     async editUser(req, res){
         let id = req.params.id
-        let {name, email, role} = req.body
+        let {name, email, phone, role} = req.body
         if(isNaN(id)){
             return res.status(404).json({sucess: false, message:'Parametro Inválido'})
         }else{
-            let result = await User.update(id, name, email, role)
+            let result = await User.update(id, name, email,phone, role)
             result.status 
             ? res.status(200).json({sucess: result.status, message: result.message})
             : res.status(406).json({sucess: result.status, message: result.err})

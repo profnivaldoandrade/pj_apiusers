@@ -47,7 +47,7 @@ class User{
         }
     }
 
-    async update(id, name, email, role){
+    async update(id, name, email, phone, role){
         let user = await this.findById(id)
         if(user.status){
             
@@ -55,6 +55,7 @@ class User{
 
             name != undefined ? editUser.name = name : null
             email != undefined ? editUser.email = email : null
+            phone != undefined ? editUser.phone = phone : null
             role != undefined ? editUser.role = role : null
 
             try {
